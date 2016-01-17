@@ -27,7 +27,6 @@ Plugin 'mbbill/undotree'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'file:///home/marty/projects/nerdtree-project-plugin/'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
