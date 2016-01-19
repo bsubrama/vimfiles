@@ -1,6 +1,7 @@
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
 
 "set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -27,6 +28,7 @@ Plugin 'mbbill/undotree'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -40,6 +42,7 @@ set history=1000
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
 
+set nowrap      "no wrapping
 set number      "show line numbers
 
 "display tabs and trailing spaces
@@ -49,6 +52,11 @@ set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
 
+set noswapfile  "no swapfile
+set nobackup    "no backup
+set nowritebackup " no backup
+set autoread    "auto update
+set autowrite   "auto update
 set wrap        "dont wrap lines
 set linebreak   "wrap lines at convenient points
 
@@ -63,10 +71,17 @@ endif
 set directory=~/.vim/swapfiles//
 
 "default indent settings
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set expandtab
+set smarttab
 set autoindent
+
+set ruler
+
+set showmatch
+set matchtime=5
 
 "folding settings
 set foldmethod=indent   "fold based on indent
@@ -292,6 +307,9 @@ nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f3> :TagbarToggle<cr>
 nnoremap <f4> :NERDTreeFind<cr>
 nnoremap <c-f> :CtrlP<cr>
+
+"convenience mapping
+nnoremap ; :
 
 "source project specific config files
 runtime! projects/**/*.vim
